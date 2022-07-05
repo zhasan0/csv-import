@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\UsersImport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CsvImportController extends Controller
 {
@@ -13,7 +15,7 @@ class CsvImportController extends Controller
 
     public function store(Request $request)
     {
-        $csv_path = request()->file('contact_file')->getRealPath();
-        dd($csv_path);
+        Excel::import(new UsersImport(), $request->file('file')->store('temp'));
+        return back();
     }
 }

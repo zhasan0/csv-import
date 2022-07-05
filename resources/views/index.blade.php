@@ -16,8 +16,10 @@
 </head>
 <body class="antialiased">
 <h1></h1>
-<form action="{{ route('csv.import') }}">
-    <input type="file" id="csv_file" name="csv_file">
+<form action="{{ route('csv.import') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <input type="file" id="csv_file" name="file">
+    <button type="submit">Submit</button>
 </form>
 
 <h1>List</h1>

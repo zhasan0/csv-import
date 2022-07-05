@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/', [\App\Http\Controllers\CsvImportController::class, 'index']);
-Route::get('/csv-import-store', [\App\Http\Controllers\CsvImportController::class, 'store'])->name('csv.import');
+Route::any('/csv-import-store', [\App\Http\Controllers\CsvImportController::class, 'store'])->name('csv.import');
