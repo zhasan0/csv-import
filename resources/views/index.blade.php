@@ -21,16 +21,18 @@
     <input type="file" id="csv_file" name="file">
     <button type="submit">Submit</button>
 </form>
+<br>
+<p>{{ session('success') }}</p>
 
-<h1>List</h1>
-<table>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
+{{--<h1>List</h1>--}}
+{{--<table>--}}
+{{--    <tr>--}}
+{{--        <td></td>--}}
+{{--        <td></td>--}}
+{{--        <td></td>--}}
+{{--        <td></td>--}}
+{{--        <td></td>--}}
+{{--    </tr>--}}
+{{--</table>--}}
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\MobileImport;
 use App\Imports\UsersImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,7 +16,8 @@ class CsvImportController extends Controller
 
     public function store(Request $request)
     {
-        Excel::import(new UsersImport(), $request->file('file')->store('temp'));
-        return back();
+//        dd($request->file('file'));
+        Excel::import(new MobileImport(), $request->file('file')->store('temp'));
+        return back()->with('success', "Successfully Uploaded");
     }
 }

@@ -46,6 +46,12 @@ class UsersImport implements ToModel
         $image_url = $row[4];
         $id = $row[0]; // $row[0] = mobile record id
 
+        // check the images file is exists
+        $image_base_path = public_path("images");
+        if (!File::exists($image_base_path)) {
+            File::makeDirectory($image_base_path, $mode = 0777, true, true);
+        }
+
         // create file with record id
         $image_save_path = public_path("images/" . $id);
         if (!File::exists($image_save_path)) {
